@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Detail - Designing Dashboards</title>
+    <link rel="stylesheet" href="css/single-blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Work Detail</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active">Blog</a></li>
+                <li><a href="#">Works</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <span class="badge">2020</span>
+            <h1>Designing Dashboards with usability in mind</h1>
+            <p class="subtitle">Dashboard, User Experience Design</p>
+            
+            <p class="intro-text">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+            </p>
+
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop" alt="Dashboard mockup" class="dashboard-image">
+
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=300&fit=crop" alt="Dashboard design" class="dashboard-image">
+
+            <div class="section">
+                <h2>Heading 1</h2>
+                <h3>Heading 2</h3>
+                <p class="section-text">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                </p>
+            </div>
+
+            <div class="car-image">
+                <div class="car">
+                    <div class="car-roof">
+                        <div class="car-window"></div>
+                    </div>
+                    <div class="car-body"></div>
+                </div>
+            </div>
+
+            <div class="order-card">
+                <div class="order-header">
+                    <div class="order-title">Your Order</div>
+                    <div class="restaurant-name">La Catrina</div>
+                    <div class="restaurant-address">820 Spanka Square Suite 260</div>
+                    
+                    <div class="delivery-method">
+                        <span style="font-size: 13px; color: #999;">How</span>
+                        <span class="method-btn active">Delivery</span>
+                        <a href="#" class="change-link">Change</a>
+                    </div>
+                </div>
+
+                <div class="section-label">How</div>
+                <div class="delivery-options">
+                    <div class="delivery-option">
+                        <span class="radio active"></span>
+                        <span>Delivery</span>
+                    </div>
+                    <div class="delivery-option">
+                        <span class="radio"></span>
+                        <span>Pickup</span>
+                    </div>
+                </div>
+
+                <div class="schedule-section">
+                    <div class="section-label">When</div>
+                    <div class="date-buttons">
+                        <button class="date-btn">Today</button>
+                        <button class="date-btn active">Tomorrow</button>
+                        <button class="date-btn">Jan 11 Fri</button>
+                        <button class="date-btn">Jan 12 Sat</button>
+                    </div>
+                    
+                    <div class="time-dropdown">
+                        <select class="time-select">
+                            <option>10:00 AM</option>
+                            <option selected>10:15 AM</option>
+                            <option>10:30 AM</option>
+                            <option>10:45 AM</option>
+                            <option>11:00 AM</option>
+                            <option>11:15 AM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span>$35.28</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+             <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="copyright">Copyright ©2025 All rights reserved</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                const hamburger = document.querySelector('.hamburger');
+                
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        
+        document.addEventListener('click', (e) => {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            
+            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
